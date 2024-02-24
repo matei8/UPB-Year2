@@ -6,7 +6,8 @@ package TemaTest;
 import java.io.IOException;
 import java.lang.*;
 
-public class App extends FileHandler {
+public class App {
+    private static final FileHandler handler = new FileHandler();
     public App() {
 
     }
@@ -24,7 +25,7 @@ public class App extends FileHandler {
     }
 
     private void cleanup() {
-        cleanAll();
+        handler.cleanAll();
         System.out.println("{'status':'ok','message':'Cleanup finished successfully'}");
     }
 
@@ -87,7 +88,7 @@ public class App extends FileHandler {
         if (args.length != 4) {
             System.out.println("{'status':'error','message':'No username to follow was provided'}");
             return;
-        } else if (!checkUser(args[3].split(" ")[1])) { // check if the user to follow exists
+        } else if (!handler.checkUser(args[3].split(" ")[1])) { // check if the user to follow exists
             System.out.println("{'status':'error','message':'The username to follow was not valid'}");
             return;
         }
@@ -121,7 +122,7 @@ public class App extends FileHandler {
         if (args.length != 4) {
             System.out.println("{'status':'error','message':'No username to unfollow was provided'}");
             return;
-        } else if (!checkUser(args[3].split(" ")[1])) {
+        } else if (!handler.checkUser(args[3].split(" ")[1])) {
             System.out.println("{'status':'error','message':'The username to unfollow was not valid'}");
             return;
         }
@@ -129,9 +130,9 @@ public class App extends FileHandler {
         String userToUnfollow = user.get4thArg(args);
 
         try {
-            if (user.unfollow(user.username, userToUnfollow, followingLog)) {
+            if (user.unfollow(user.username, userToUnfollow, FileHandler.followingLog)) {
                 System.out.println("{'status':'ok','message':'Operation executed successfully'}");
-                user.unfollow(userToUnfollow, user.username, followersLog);
+                user.unfollow(userToUnfollow, user.username, FileHandler.followersLog);
             }
         } catch (IOException ignored) {
 
@@ -155,7 +156,7 @@ public class App extends FileHandler {
         if (args.length != 4) {
             System.out.println("{'status':'error','message':'No username to list followers was provided'}");
             return;
-        } else if (!checkUser(args[3].split(" ")[1])) {
+        } else if (!handler.checkUser(args[3].split(" ")[1])) {
             System.out.println("{'status':'error','message':'The username to list followers was not valid'}");
             return;
         }
@@ -183,7 +184,7 @@ public class App extends FileHandler {
 
         User user = new User(args);
 
-        if (postExists(id) && postValidForLike(user, id)) {
+        if (handler.postExists(id) && handler.postValidForLike(user, id)) {
             post.like(id); // add like to post
             user.like(id); // add liked post id to user file
             System.out.println("{'status':'ok','message':'Operation executed successfully'}");
@@ -204,7 +205,7 @@ public class App extends FileHandler {
 
         User user = new User(args);
 
-        if (postExists(id) && postValidForUnlike(user, id)) {
+        if (handler.postExists(id) && handler.postValidForUnlike(user, id)) {
             post.unlike(id); // remove like from post
             user.unlike(id); // remove liked post id from user file
             System.out.println("{'status':'ok','message':'Operation executed successfully'}");
@@ -260,7 +261,7 @@ public class App extends FileHandler {
             String username = User.getUsername(strings);
             String password = User.getPassword(strings);
 
-            if (!validPasswordAndUser(username, password)) {
+            if (!handler.validPasswordAndUser(username, password)) {
                 System.out.println("{'status':'error','message':'Login failed'}");
                 return;
             }

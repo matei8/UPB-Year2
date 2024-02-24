@@ -3,7 +3,11 @@ package TemaTest;
 import java.io.IOException;
 import java.util.Objects;
 
-public class Comment extends FileHandler implements Likeable {
+import static TemaTest.FileHandler.*;
+
+public class Comment implements Likeable {
+    private static final FileHandler handler = new FileHandler();
+
     protected int id;
     protected int postID;
     protected String username;
@@ -19,8 +23,7 @@ public class Comment extends FileHandler implements Likeable {
     }
 
     private String getUsername(String[] args) {
-        String[] param = args[1].split(" ");
-        return param[1];
+        return User.getUsername(args);
     }
 
     protected String getText(String[] args) throws ArrayIndexOutOfBoundsException {
@@ -40,29 +43,29 @@ public class Comment extends FileHandler implements Likeable {
     }
 
     private int getCommNo() {
-        String line = readKthLine(appStats, 3);
+        String line = handler.readKthLine(appStats, 3);
         assert line != null;
         return Integer.parseInt(line.split(": ")[1]);
     }
 
     private int getLastID() {
-        if (getLineNo(commentsLog) == 0) {
+        if (handler.getLineNo(commentsLog) == 0) {
             return 0;
         }
-        String[] lastLine = Objects.requireNonNull(readKthLine(commentsLog, getCommNo())).split(",");
+        String[] lastLine = Objects.requireNonNull(handler.readKthLine(commentsLog, getCommNo())).split(",");
         return Integer.parseInt(lastLine[0]);
     }
 
     protected boolean logComment() {
         try {
-            writeCommToFile(this.postID, this.id, this.username, this.text);
+            handler.writeCommToFile(this.postID, this.id, this.username, this.text);
         } catch (IOException e) {
             System.out.println(e.getMessage());
             return false;
         }
 
         try {
-            updateAppStats("COMMENTS", 2, false);
+            handler.updateAppStats("COMMENTS", 2, false);
         } catch (IOException e) {
             System.out.println("Warning: Did not log in App Stats file!");
             System.out.println(e.getMessage());
@@ -80,7 +83,7 @@ public class Comment extends FileHandler implements Likeable {
 
         try {
             if (deleteCommFromLog(this.id)) {
-                updateAppStats("COMMENTS", 2, true);
+                handler.updateAppStats("COMMENTS", 2, true);
             }
             return true;
         } catch (IOException e) {
@@ -92,7 +95,7 @@ public class Comment extends FileHandler implements Likeable {
     }
 
     private boolean deleteCommFromLog(int id) throws IOException {
-        return deletePostOrComm(id, commentsLog, getLines(commentsLog));
+        return handler.deletePostOrComm(id, commentsLog, handler.getLines(commentsLog));
     }
 
     @Override

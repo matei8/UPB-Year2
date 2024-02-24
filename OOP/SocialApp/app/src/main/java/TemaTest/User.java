@@ -5,9 +5,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import static TemaTest.FileHandler.*;
 
-public class User extends FileHandler implements Likeable {
+public class User implements Likeable {
+    private static final FileHandler handler = new FileHandler();
+
     protected String username;
     protected String password;
 
@@ -18,14 +22,14 @@ public class User extends FileHandler implements Likeable {
 
     protected boolean logUser() {
         try {
-            writeUserToFIle(this.username, this.password);
+            handler.writeUserToFIle(this.username, this.password);
         } catch (IOException e) {
             System.out.println(e.getMessage());
             return false;
         }
 
         try {
-            updateAppStats("USERS", 0, false);
+            handler.updateAppStats("USERS", 0, false);
         } catch (IOException e) {
             System.out.println("Warning: Did not log in App Stats file!");
             System.out.println(e.getMessage());
@@ -35,7 +39,7 @@ public class User extends FileHandler implements Likeable {
     }
 
     protected boolean userExists() {
-        return checkUser(this.username);
+        return handler.checkUser(this.username);
     }
 
     protected static String getUsername(String[] args) {
@@ -55,7 +59,7 @@ public class User extends FileHandler implements Likeable {
 
     protected boolean addFollower(String followerName) {
         try {
-            return logFollower(followerName, this.username, followersLog);
+            return handler.logFollower(followerName, this.username, followersLog);
         } catch (IOException e) {
             System.out.println(e.getMessage());
             return false;
@@ -64,7 +68,7 @@ public class User extends FileHandler implements Likeable {
 
     protected boolean follow(String usernameToFollow) {
         try {
-            if (!logFollower(this.username, usernameToFollow, followingLog)) {
+            if (!handler.logFollower(this.username, usernameToFollow, followingLog)) {
                 System.out.println("{'status':'error','message':'The username to follow was not valid'}");
                 return false;
             }
@@ -78,10 +82,10 @@ public class User extends FileHandler implements Likeable {
     protected boolean unfollow(String user, String usernameToUnfollow, String log) throws IOException {
         File file = new File(log);
         boolean found = false;
-        List<String> lines;
+        HashMap<Integer, String> lines;
 
         try {
-            lines = getLines(log);
+            lines = handler.getLines(log);
         } catch (IOException e) {
             return false;
         }
@@ -93,7 +97,7 @@ public class User extends FileHandler implements Likeable {
                 int beginIndex = currentUser.length() + 1;
                 String[] following = lines.get(i).substring(beginIndex).split(",");
 
-                lines.set(i, currentUser + ",");
+                lines.replace(i, currentUser + ",");
                 StringBuilder update = new StringBuilder();
 
                 for (String s : following) {
@@ -109,14 +113,14 @@ public class User extends FileHandler implements Likeable {
                 }
 
                 if (found) {
-                    lines.set(i, lines.get(i).concat(String.valueOf(update)));
+                    lines.replace(i, lines.get(i).concat(String.valueOf(update)));
                     break;
                 }
             }
         }
 
         if (found) {
-            Files.write(file.toPath(), lines);
+            Files.write(file.toPath(), lines.values());
             return true;
         }
 
@@ -136,15 +140,15 @@ public class User extends FileHandler implements Likeable {
 
     private String[] getFollowsInfo(String user, File file) {
         String[] following = null;
-        List<String> lines;
+        HashMap<Integer, String> lines;
 
         try {
-            lines = getLines(file.getPath());
+            lines = handler.getLines(file.getPath());
         } catch (IOException e) {
             return null;
         }
 
-        for (String line : lines) {
+        for (String line : lines.values()) {
             String currentUser = line.split(",")[0];
             if (currentUser.equals(user)) {
                 int beginIndex = currentUser.length() + 1;
@@ -158,23 +162,24 @@ public class User extends FileHandler implements Likeable {
 
     @Override
     public void like(int id) {
-        List<String> lines;
+        HashMap<Integer, String> lines;
+
         try {
-            lines = getLines(usersLog);
+            lines = handler.getLines(usersLog);
         } catch (IOException e) {
             System.out.println(e.getMessage());
             return;
         }
 
-        for (String line : lines) {
+        for (String line : lines.values()) {
             String currentUser = line.split(",")[0];
             if (currentUser.equals(this.username)) {
-                int lineIndex = lines.indexOf(line);
+                int lineIndex = lines.values().stream().toList().indexOf(line);
                 line = line.concat("," + id);
-                lines.set(lineIndex, line);
+                lines.replace(lineIndex, line);
 
                 try {
-                    Files.write(Path.of(usersLog), lines);
+                    Files.write(Path.of(usersLog), lines.values());
                     return;
                 } catch (IOException e) {
                     System.out.println(e.getMessage());
@@ -186,24 +191,25 @@ public class User extends FileHandler implements Likeable {
 
     @Override
     public void unlike(int id) {
-        List<String> lines;
+        HashMap<Integer, String> lines;
+
         try {
-            lines = getLines(usersLog);
+            lines = handler.getLines(usersLog);
         } catch (IOException e) {
             System.out.println(e.getMessage());
             return;
         }
 
-        for (String line : lines) {
+        for (String line : lines.values()) {
             String currentUser = line.split(",")[0];
             if (currentUser.equals(this.username)) {
-                int lineIndex = lines.indexOf(line);
+                int lineIndex = lines.values().stream().toList().indexOf(line);
                 List<String> lineAsList = new ArrayList<>(List.of(line.split(",")));
                 lineAsList.remove(id);
-                lines.set(lineIndex, lineAsList.toString());
+                lines.replace(lineIndex, lineAsList.toString());
 
                 try {
-                    Files.write(Path.of(usersLog), lines);
+                    Files.write(Path.of(usersLog), lines.values());
                     return;
                 } catch (IOException e) {
                     System.out.println(e.getMessage());
