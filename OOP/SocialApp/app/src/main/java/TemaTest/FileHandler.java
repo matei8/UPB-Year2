@@ -4,19 +4,8 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class FileHandler implements Handler {
-    public static final String usersLog = "users.txt";
-    public static final String postsLog = "posts.txt";
-    public static final String appStats = "appStats.txt";
-    public static final String followingLog = "following.txt";
-    public static final String followersLog = "followers.txt";
-    public static final String commentsLog = "comments.txt";
-
-    public static final Map<Integer, String> appFiles = new HashMap<>();
-
     static {
         appFiles.put(0, usersLog);
         appFiles.put(1, postsLog);
@@ -26,68 +15,51 @@ public class FileHandler implements Handler {
         appFiles.put(5, commentsLog);
     }
 
-    public HashMap<Integer, String> getLines(String filePath) throws IOException {
-        FileReader fileReader = new FileReader(filePath);
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
+    public HashMap<Integer, String> getLines(String filePath) {
+        FileReader fileReader;
+        BufferedReader reader;
+
+        try {
+            fileReader = new FileReader(filePath);
+            reader = new BufferedReader(fileReader);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
         HashMap<Integer, String> map = new HashMap<>();
         String line;
+
+        try {
+            line = reader.readLine();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
         int i = 0;
 
-        while ((line = bufferedReader.readLine()) != null) {
+        while (line != null) {
             map.put(i, line);
+            try {
+                line = reader.readLine();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             i++;
+        }
+
+        try {
+            reader.close();
+            fileReader.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
         return map;
     }
 
-    public boolean checkUser(String username) {
-        HashMap<Integer, String> lines;
-
-        try {
-            lines = getLines(usersLog);
-        } catch (IOException e) {
-            return false;
-        }
-
-        for (String line : lines.values()) {
-            String currentUser = line.split(",")[0];
-            if (currentUser.equals(username)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean validPasswordAndUser(String username, String password) {
-        HashMap<Integer, String> lines;
-
-        try {
-            lines = getLines(usersLog);
-        } catch (IOException e) {
-            return false;
-        }
-
-        for (String line : lines.values()) {
-            String currentUser = line.split(",")[0];
-            String currentPasswd = line.split(",")[1];
-            if (currentUser.equals(username)) {
-                return password.equals(currentPasswd);
-            }
-        }
-
-        return false;
-    }
-
     public void writeUserToFIle(String username, String password) throws IOException {
         HashMap<Integer, String> lines;
-
-        try {
-            lines = getLines(usersLog);
-        } catch (IOException e) {
-            return;
-        }
+        lines = getLines(usersLog);
 
         lines.put(lines.size(), username + "," + password);
         Files.write(Path.of(usersLog), lines.values());
@@ -95,12 +67,7 @@ public class FileHandler implements Handler {
 
     public void writePostToFile(int id, String username, String text) throws IOException {
         HashMap<Integer, String> lines;
-
-        try {
-            lines = getLines(postsLog);
-        } catch (IOException e) {
-            return;
-        }
+        lines = getLines(postsLog);
 
         lines.put(lines.size(), id + "," + username + "," + text + "," + 0);
         Files.write(Path.of(postsLog), lines.values());
@@ -108,12 +75,7 @@ public class FileHandler implements Handler {
 
     public void writeCommToFile(int postID, int comID, String username, String text) throws IOException {
         HashMap<Integer, String> lines;
-
-        try {
-            lines = getLines(commentsLog);
-        } catch (IOException e) {
-            return;
-        }
+        lines = getLines(commentsLog);
 
         lines.put(lines.size(), comID + "," + postID + "," + username + "," + text);
         Files.write(Path.of(commentsLog), lines.values());
@@ -122,12 +84,7 @@ public class FileHandler implements Handler {
     public boolean logFollower(String follower, String usernameToFollow, String file) throws IOException {
         File logFile = new File(file);
         HashMap<Integer, String> lines;
-
-        try {
-            lines = getLines(file);
-        } catch (IOException e) {
-            return false;
-        }
+        lines = getLines(file);
 
         if (logFile.length() != 0 && logFile.length() != 1) {
             for (int i = 0; i < lines.size(); i++) {
@@ -140,7 +97,7 @@ public class FileHandler implements Handler {
                     }
 
                     currentLine = currentLine.concat("," + usernameToFollow);
-                    lines.put(i, currentLine);
+                    lines.replace(i, currentLine);
                     Files.write(logFile.toPath(), lines.values());
                     return true;
                 }
@@ -152,19 +109,19 @@ public class FileHandler implements Handler {
         return true;
     }
 
-    private void cleanFile(String file) {
-        try {
-            PrintWriter users = new PrintWriter(file);
-            users.print("");
-            users.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    private void cleanFile(String fileName) throws IOException {
+        PrintWriter file = new PrintWriter(fileName);
+        file.print("");
+        file.close();
     }
 
     public void cleanAll() {
         for (String appFile : appFiles.values()) {
-            cleanFile(appFile);
+            try {
+                cleanFile(appFile);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
@@ -176,12 +133,7 @@ public class FileHandler implements Handler {
             setupAppStats();
         }
 
-        try {
-            lines = getLines(appStats);
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-            return;
-        }
+        lines = getLines(appStats);
 
         String stat = lines.get(line).split(": ")[1];
         int number;
@@ -192,7 +144,7 @@ public class FileHandler implements Handler {
             number = Integer.parseInt(stat) + 1;
         }
 
-        lines.put(line, fieldToUpdate + ": " + number);
+        lines.replace(line, fieldToUpdate + ": " + number);
         Files.write(appStatsFile.toPath(), lines.values());
     }
 
@@ -204,121 +156,33 @@ public class FileHandler implements Handler {
             out.println("POSTS: 0");
             out.println("COMMENTS: 0");
         } catch (IOException ignored) {
-
+            System.out.println("Warning: Could not create App Stats file!");
         }
     }
 
     public String readKthLine(String file, int k) {
         HashMap<Integer, String> lines;
-
-        try {
-            lines = getLines(file);
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-            return null;
-        }
-
+        lines = getLines(file);
         return lines.get(k - 1);
     }
 
     public int getLineNo(String file) {
         HashMap<Integer, String> lines;
-
-        try {
-            lines = getLines(file);
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-            return 0;
-        }
-
+        lines = getLines(file);
         return lines.size();
     }
-
-    public boolean postExists(int id) {
-        HashMap<Integer, String> lines;
-
-        try {
-            lines = getLines(postsLog);
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-            return false;
-        }
-
-        for (String line : lines.values()) {
-            if (Integer.parseInt(line.split(",")[0]) == id) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    public boolean postValidForLike(User user, int id) {
-        return !postAlreadyLiked(user, id) && postBelongsToUser(user, id);
-    }
-
-    public boolean postValidForUnlike(User user, int id) {
-        return postAlreadyLiked(user, id) && postBelongsToUser(user, id);
-    }
-
-    private boolean postBelongsToUser(User user, int id) {
-        HashMap<Integer, String> lines;
+    public void updateLikeInfo(HashMap<Integer, String> lines, String line, int likeNo) {
+        int lineIndex = lines.values().stream().toList().indexOf(line);
+        line = line.replace(line.split(",")[3], Integer.toString(likeNo));
+        lines.replace(lineIndex, line);
 
         try {
-            lines = getLines(postsLog);
+            Files.write(Path.of(postsLog), lines.values());
         } catch (IOException e) {
             System.out.println(e.getMessage());
-            return false;
         }
-
-        for (String line : lines.values()) {
-            int currentID = Integer.parseInt(line.split(",")[0]);
-            if (currentID == id) {
-                String currentUser = line.split(",")[1];
-                if (currentUser.equals(user.username)) {
-                    return false;
-                }
-                break;
-            }
-        }
-        return true;
     }
 
-    private boolean postAlreadyLiked(User user, int id) {
-        HashMap<Integer, String> lines;
-
-        try {
-            lines = getLines(usersLog);
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-            return false;
-        }
-
-        int usernameLen = user.username.length();
-        int passwordLen = user.password.length();
-        int beginIndex = usernameLen + passwordLen + 1;
-
-        for (String line : lines.values()) {
-            String currentUser = line.split(",")[0];
-            if (currentUser.equals(user.username)) {
-                if (beginIndex != line.length()) {
-                    beginIndex++;
-                } else {
-                    return false;
-                }
-
-                String[] likedPosts = line.substring(beginIndex).split(",");
-
-                for (String postID : likedPosts) {
-                    if (Integer.parseInt(postID) == id) {
-                        return true;
-                    }
-                }
-                break;
-            }
-        }
-        return false;
-    }
 
     public boolean deletePostOrComm(int id, String commentsLog, HashMap<Integer, String> lines) {
         File comments = new File(commentsLog);

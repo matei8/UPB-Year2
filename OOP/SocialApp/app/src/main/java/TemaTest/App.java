@@ -8,12 +8,13 @@ import java.lang.*;
 
 public class App {
     private static final FileHandler handler = new FileHandler();
+    private static final Validator validator = Validator.getInstance();
     public App() {
 
     }
 
     // Check if the username and password arguments are provided
-    private static boolean checkCredentials(String[] args) {
+    private static boolean checkParams(String[] args) {
         if (args.length < 2 || !args[1].contains("-u")) {
             System.out.println("{'status':'error','message':'You need to be authenticated'}");
             return false;
@@ -41,7 +42,7 @@ public class App {
         User user = new User(args);
 
         // Check if the user exists in the users.txt file
-        if (user.userExists()) {
+        if (validator.userExists(user.username)) {
             System.out.println("{'status':'error','message':'User already exists'}");
             return;
         }
@@ -88,7 +89,7 @@ public class App {
         if (args.length != 4) {
             System.out.println("{'status':'error','message':'No username to follow was provided'}");
             return;
-        } else if (!handler.checkUser(args[3].split(" ")[1])) { // check if the user to follow exists
+        } else if (!validator.userExists(args[3].split(" ")[1])) { // check if the user to follow exists
             System.out.println("{'status':'error','message':'The username to follow was not valid'}");
             return;
         }
@@ -122,7 +123,7 @@ public class App {
         if (args.length != 4) {
             System.out.println("{'status':'error','message':'No username to unfollow was provided'}");
             return;
-        } else if (!handler.checkUser(args[3].split(" ")[1])) {
+        } else if (!validator.userExists(args[3].split(" ")[1])) {
             System.out.println("{'status':'error','message':'The username to unfollow was not valid'}");
             return;
         }
@@ -156,7 +157,7 @@ public class App {
         if (args.length != 4) {
             System.out.println("{'status':'error','message':'No username to list followers was provided'}");
             return;
-        } else if (!handler.checkUser(args[3].split(" ")[1])) {
+        } else if (!validator.userExists(args[3].split(" ")[1])) {
             System.out.println("{'status':'error','message':'The username to list followers was not valid'}");
             return;
         }
@@ -184,7 +185,7 @@ public class App {
 
         User user = new User(args);
 
-        if (handler.postExists(id) && handler.postValidForLike(user, id)) {
+        if (validator.postExists(id) && validator.postValidForLike(user, id)) {
             post.like(id); // add like to post
             user.like(id); // add liked post id to user file
             System.out.println("{'status':'ok','message':'Operation executed successfully'}");
@@ -205,7 +206,7 @@ public class App {
 
         User user = new User(args);
 
-        if (handler.postExists(id) && handler.postValidForUnlike(user, id)) {
+        if (validator.postExists(id) && validator.postValidForUnlike(user, id)) {
             post.unlike(id); // remove like from post
             user.unlike(id); // remove liked post id from user file
             System.out.println("{'status':'ok','message':'Operation executed successfully'}");
@@ -254,14 +255,14 @@ public class App {
         }
 
         if (!strings[0].equals("-cleanup-all") && !strings[0].equals("-create-user")) {
-            if (!checkCredentials(strings)) {
+            if (!checkParams(strings)) {
                 return;
             }
 
             String username = User.getUsername(strings);
             String password = User.getPassword(strings);
 
-            if (!handler.validPasswordAndUser(username, password)) {
+            if (!validator.validCredentials(username, password)) {
                 System.out.println("{'status':'error','message':'Login failed'}");
                 return;
             }

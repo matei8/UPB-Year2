@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TemaTest.AppTest" tests="134" skipped="0" failures="22" errors="0" timestamp="2024-02-24T18:51:37" hostname="JARVIS" time="1.354">
+<testsuite name="TemaTest.AppTest" tests="134" skipped="0" failures="22" errors="0" timestamp="2024-02-25T21:45:37" hostname="JARVIS" time="1.246">
   <properties/>
-  <testcase name="testCommentPostWithOver300Characters()" classname="TemaTest.AppTest" time="0.057"/>
+  <testcase name="testCommentPostWithOver300Characters()" classname="TemaTest.AppTest" time="0.055"/>
   <testcase name="testGetFollowingUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.007"/>
-  <testcase name="testCreatePostNoPassword()" classname="TemaTest.AppTest" time="0.007"/>
-  <testcase name="testUnlikeCommentSuccessfully()" classname="TemaTest.AppTest" time="0.023">
+  <testcase name="testCreatePostNoPassword()" classname="TemaTest.AppTest" time="0.008"/>
+  <testcase name="testUnlikeCommentSuccessfully()" classname="TemaTest.AppTest" time="0.019">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message':'Operation executed successfully'}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message':'Operation executed successfully'}&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
@@ -93,8 +93,8 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testDeletePostNotValid()" classname="TemaTest.AppTest" time="0.009"/>
-  <testcase name="testUnlikeCommentAlreadyLiked()" classname="TemaTest.AppTest" time="0.016">
+  <testcase name="testDeletePostNotValid()" classname="TemaTest.AppTest" time="0.011"/>
+  <testcase name="testUnlikeCommentAlreadyLiked()" classname="TemaTest.AppTest" time="0.011">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'error','message':'The comment identifier to unlike was not valid'}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'error','message':'The comment identifier to unlike was not valid'}&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
@@ -184,13 +184,13 @@
 </failure>
   </testcase>
   <testcase name="testLikePostNotFound()" classname="TemaTest.AppTest" time="0.012"/>
-  <testcase name="testGetMostFollowedPostsNoUsername()" classname="TemaTest.AppTest" time="0.011"/>
-  <testcase name="testDeleteCommentLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.011"/>
+  <testcase name="testGetMostFollowedPostsNoUsername()" classname="TemaTest.AppTest" time="0.009"/>
+  <testcase name="testDeleteCommentLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.009"/>
   <testcase name="testUnlikePostNoPassword()" classname="TemaTest.AppTest" time="0.007"/>
-  <testcase name="testLikePostSuccessfully()" classname="TemaTest.AppTest" time="0.014"/>
-  <testcase name="testLikePostAlreadyLiked()" classname="TemaTest.AppTest" time="0.016"/>
-  <testcase name="testCommentPostLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.006"/>
-  <testcase name="testGetMostLikedUsersSuccessfully()" classname="TemaTest.AppTest" time="0.048">
+  <testcase name="testLikePostSuccessfully()" classname="TemaTest.AppTest" time="0.019"/>
+  <testcase name="testLikePostAlreadyLiked()" classname="TemaTest.AppTest" time="0.014"/>
+  <testcase name="testCommentPostLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.004"/>
+  <testcase name="testGetMostLikedUsersSuccessfully()" classname="TemaTest.AppTest" time="0.039">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'username':'test2','number_of_likes':'3'},{'username':'test','number_of_likes':'2'},{'username':'test6','number_of_likes':'2'},{'username':'test3','number_of_likes':'1'},{'username':'test4','number_of_likes':'1'}]}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'username':'test2','number_of_likes':'3'},{'username':'test','number_of_likes':'2'},{'username':'test6','number_of_likes':'2'},{'username':'test3','number_of_likes':'1'},{'username':'test4','number_of_likes':'1'}]}&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
@@ -279,32 +279,32 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testGetFollowersNotFound()" classname="TemaTest.AppTest" time="0.012"/>
-  <testcase name="testDeletePostNoPassword()" classname="TemaTest.AppTest" time="0.007"/>
-  <testcase name="testGetMostLikedUsersNoUsername()" classname="TemaTest.AppTest" time="0.028"/>
-  <testcase name="testLikeCommentLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.032"/>
-  <testcase name="testFollowSuccessfully()" classname="TemaTest.AppTest" time="0.016"/>
+  <testcase name="testGetFollowersNotFound()" classname="TemaTest.AppTest" time="0.009"/>
+  <testcase name="testDeletePostNoPassword()" classname="TemaTest.AppTest" time="0.006"/>
+  <testcase name="testGetMostLikedUsersNoUsername()" classname="TemaTest.AppTest" time="0.006"/>
+  <testcase name="testLikeCommentLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.009"/>
+  <testcase name="testFollowSuccessfully()" classname="TemaTest.AppTest" time="0.017"/>
   <testcase name="testCommentPostNoUsername()" classname="TemaTest.AppTest" time="0.006"/>
-  <testcase name="testUnfollowIdWrong()" classname="TemaTest.AppTest" time="0.009"/>
-  <testcase name="testUnfollowLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.009"/>
-  <testcase name="testLikePostLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.009"/>
-  <testcase name="testGetFollowersLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.006"/>
-  <testcase name="testGetMostLikedPostsUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.006"/>
-  <testcase name="testCreatePostWithOver300Characters()" classname="TemaTest.AppTest" time="0.009"/>
-  <testcase name="testGetMostCommentedPostsUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.008"/>
+  <testcase name="testUnfollowIdWrong()" classname="TemaTest.AppTest" time="0.007"/>
+  <testcase name="testUnfollowLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.006"/>
+  <testcase name="testLikePostLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.008"/>
+  <testcase name="testGetFollowersLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.005"/>
+  <testcase name="testGetMostLikedPostsUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.007"/>
+  <testcase name="testCreatePostWithOver300Characters()" classname="TemaTest.AppTest" time="0.008"/>
+  <testcase name="testGetMostCommentedPostsUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.005"/>
   <testcase name="testDummy()" classname="TemaTest.AppTest" time="0.0"/>
-  <testcase name="testCreatePostSuccessfully()" classname="TemaTest.AppTest" time="0.009"/>
-  <testcase name="testUserPostsNoPassword()" classname="TemaTest.AppTest" time="0.007"/>
-  <testcase name="testUserPostsUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.006"/>
-  <testcase name="testGetFollowingNoPassword()" classname="TemaTest.AppTest" time="0.007"/>
-  <testcase name="testFollowNoUsername()" classname="TemaTest.AppTest" time="0.005"/>
-  <testcase name="testDeleteCommentNoPassword()" classname="TemaTest.AppTest" time="0.006"/>
-  <testcase name="testCreateUserNoUsername()" classname="TemaTest.AppTest" time="0.007"/>
+  <testcase name="testCreatePostSuccessfully()" classname="TemaTest.AppTest" time="0.008"/>
+  <testcase name="testUserPostsNoPassword()" classname="TemaTest.AppTest" time="0.005"/>
+  <testcase name="testUserPostsUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.005"/>
+  <testcase name="testGetFollowingNoPassword()" classname="TemaTest.AppTest" time="0.005"/>
+  <testcase name="testFollowNoUsername()" classname="TemaTest.AppTest" time="0.004"/>
+  <testcase name="testDeleteCommentNoPassword()" classname="TemaTest.AppTest" time="0.007"/>
+  <testcase name="testCreateUserNoUsername()" classname="TemaTest.AppTest" time="0.005"/>
   <testcase name="testGetFollowingSuccessfully()" classname="TemaTest.AppTest" time="0.015"/>
-  <testcase name="testFollowingsUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.005"/>
-  <testcase name="testGetFollowersNoUsername()" classname="TemaTest.AppTest" time="0.005"/>
-  <testcase name="testDeleteCommentNotFound()" classname="TemaTest.AppTest" time="0.008"/>
-  <testcase name="testUnlikeCommentIdWrong()" classname="TemaTest.AppTest" time="0.005">
+  <testcase name="testFollowingsUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.004"/>
+  <testcase name="testGetFollowersNoUsername()" classname="TemaTest.AppTest" time="0.006"/>
+  <testcase name="testDeleteCommentNotFound()" classname="TemaTest.AppTest" time="0.006"/>
+  <testcase name="testUnlikeCommentIdWrong()" classname="TemaTest.AppTest" time="0.004">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'error','message':'The comment identifier to unlike was not valid'}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'error','message':'The comment identifier to unlike was not valid'}&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
@@ -393,8 +393,8 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testLikeCommentNoUsername()" classname="TemaTest.AppTest" time="0.01"/>
-  <testcase name="testGetMostFollowedPostsSuccessfully()" classname="TemaTest.AppTest" time="0.037">
+  <testcase name="testLikeCommentNoUsername()" classname="TemaTest.AppTest" time="0.009"/>
+  <testcase name="testGetMostFollowedPostsSuccessfully()" classname="TemaTest.AppTest" time="0.039">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'username':'test','number_of_followers':'4'},{'username':'test2','number_of_followers':'3'},{'username':'test4','number_of_followers':'2'},{'username':'test5','number_of_followers':'1'},{'username':'test6','number_of_followers':'1'} ]}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'username':'test','number_of_followers':'4'},{'username':'test2','number_of_followers':'3'},{'username':'test4','number_of_followers':'2'},{'username':'test5','number_of_followers':'1'},{'username':'test6','number_of_followers':'1'} ]}&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
@@ -484,9 +484,9 @@
 </failure>
   </testcase>
   <testcase name="testFollowingsNoPassword()" classname="TemaTest.AppTest" time="0.008"/>
-  <testcase name="testUnlikeCommentNoPassword()" classname="TemaTest.AppTest" time="0.007"/>
-  <testcase name="testPostDetailsSuccessfully()" classname="TemaTest.AppTest" time="0.013">
-    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_text':'Am terminat temele','post_date':'24-02-2024','username':'test','number_of_likes':'0','comments': [{'comment_id':'1','comment_text':'Felicitari','comment_date':'24-02-2024','username':'test2','number_of_likes':'0'}] }] }&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_text':'Am terminat temele','post_date':'24-02-2024','username':'test','number_of_likes':'0','comments': [{'comment_id':'1','comment_text':'Felicitari','comment_date':'24-02-2024','username':'test2','number_of_likes':'0'}] }] }&gt; but was: &lt;&gt;
+  <testcase name="testUnlikeCommentNoPassword()" classname="TemaTest.AppTest" time="0.006"/>
+  <testcase name="testPostDetailsSuccessfully()" classname="TemaTest.AppTest" time="0.011">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_text':'Am terminat temele','post_date':'25-02-2024','username':'test','number_of_likes':'0','comments': [{'comment_id':'1','comment_text':'Felicitari','comment_date':'25-02-2024','username':'test2','number_of_likes':'0'}] }] }&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_text':'Am terminat temele','post_date':'25-02-2024','username':'test','number_of_likes':'0','comments': [{'comment_id':'1','comment_text':'Felicitari','comment_date':'25-02-2024','username':'test2','number_of_likes':'0'}] }] }&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
@@ -574,7 +574,7 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testLikeCommentUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.006"/>
+  <testcase name="testLikeCommentUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.008"/>
   <testcase name="testPostDetailsNoUsername()" classname="TemaTest.AppTest" time="0.006"/>
   <testcase name="testFollowingsLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.006"/>
   <testcase name="testPostDetailsIdWrong()" classname="TemaTest.AppTest" time="0.004">
@@ -668,11 +668,11 @@
   </testcase>
   <testcase name="testGetMostLikedPostsNoPassword()" classname="TemaTest.AppTest" time="0.007"/>
   <testcase name="testGetMostLikedUsersLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.006"/>
-  <testcase name="testUnlikePostSuccessfully()" classname="TemaTest.AppTest" time="0.014"/>
+  <testcase name="testUnlikePostSuccessfully()" classname="TemaTest.AppTest" time="0.012"/>
   <testcase name="testGetMostCommentedPostsNoPassword()" classname="TemaTest.AppTest" time="0.005"/>
-  <testcase name="testUnlikePostAlreadyLiked()" classname="TemaTest.AppTest" time="0.01"/>
-  <testcase name="testGetMostCommentedPostsSuccessfully()" classname="TemaTest.AppTest" time="0.017">
-    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'24-02-2024','username':'test','number_of_comments':'2'},{'post_id':'2','post_text':'Am terminat temele','post_date':'24-02-2024','username':'test2','number_of_comments':'1'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'24-02-2024','username':'test3','number_of_comments':'0'}]}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'24-02-2024','username':'test','number_of_comments':'2'},{'post_id':'2','post_text':'Am terminat temele','post_date':'24-02-2024','username':'test2','number_of_comments':'1'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'24-02-2024','username':'test3','number_of_comments':'0'}]}&gt; but was: &lt;&gt;
+  <testcase name="testUnlikePostAlreadyLiked()" classname="TemaTest.AppTest" time="0.012"/>
+  <testcase name="testGetMostCommentedPostsSuccessfully()" classname="TemaTest.AppTest" time="0.02">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'25-02-2024','username':'test','number_of_comments':'2'},{'post_id':'2','post_text':'Am terminat temele','post_date':'25-02-2024','username':'test2','number_of_comments':'1'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'25-02-2024','username':'test3','number_of_comments':'0'}]}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'25-02-2024','username':'test','number_of_comments':'2'},{'post_id':'2','post_text':'Am terminat temele','post_date':'25-02-2024','username':'test2','number_of_comments':'1'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'25-02-2024','username':'test3','number_of_comments':'0'}]}&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
@@ -760,7 +760,7 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testUserPostsIdWrong()" classname="TemaTest.AppTest" time="0.006">
+  <testcase name="testUserPostsIdWrong()" classname="TemaTest.AppTest" time="0.007">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'error','message':'The username to list posts was not valid'}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'error','message':'The username to list posts was not valid'}&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
@@ -849,9 +849,9 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testPostDetailsLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.008"/>
+  <testcase name="testPostDetailsLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.007"/>
   <testcase name="testUnlikePostNotFound()" classname="TemaTest.AppTest" time="0.008"/>
-  <testcase name="testPostDetailsIdWrongSecond()" classname="TemaTest.AppTest" time="0.006">
+  <testcase name="testPostDetailsIdWrongSecond()" classname="TemaTest.AppTest" time="0.008">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'error','message':'The post identifier was not valid'}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'error','message':'The post identifier was not valid'}&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
@@ -940,13 +940,13 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testGetMostFollowedPostsNoPassword()" classname="TemaTest.AppTest" time="0.005"/>
+  <testcase name="testGetMostFollowedPostsNoPassword()" classname="TemaTest.AppTest" time="0.006"/>
   <testcase name="testCommentPostUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.005"/>
-  <testcase name="testFollowWrongCredentials()" classname="TemaTest.AppTest" time="0.007"/>
-  <testcase name="testCommentPostWithNoText()" classname="TemaTest.AppTest" time="0.006"/>
-  <testcase name="testUnfollowSuccessfully()" classname="TemaTest.AppTest" time="0.01"/>
-  <testcase name="testLikePostNoUsername()" classname="TemaTest.AppTest" time="0.005"/>
-  <testcase name="testUnlikeCommentNotFound()" classname="TemaTest.AppTest" time="0.005">
+  <testcase name="testFollowWrongCredentials()" classname="TemaTest.AppTest" time="0.006"/>
+  <testcase name="testCommentPostWithNoText()" classname="TemaTest.AppTest" time="0.005"/>
+  <testcase name="testUnfollowSuccessfully()" classname="TemaTest.AppTest" time="0.009"/>
+  <testcase name="testLikePostNoUsername()" classname="TemaTest.AppTest" time="0.004"/>
+  <testcase name="testUnlikeCommentNotFound()" classname="TemaTest.AppTest" time="0.006">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'error','message':'No comment identifier to unlike was provided'}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'error','message':'No comment identifier to unlike was provided'}&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
@@ -1035,7 +1035,7 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testUserPostsAlreadyUnfollowing()" classname="TemaTest.AppTest" time="0.006">
+  <testcase name="testUserPostsAlreadyUnfollowing()" classname="TemaTest.AppTest" time="0.007">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'error','message':'The username to list posts was not valid'}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'error','message':'The username to list posts was not valid'}&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
@@ -1124,14 +1124,14 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testGetMostLikedUsersNoPassword()" classname="TemaTest.AppTest" time="0.006"/>
-  <testcase name="testCommentPostNoPassword()" classname="TemaTest.AppTest" time="0.004"/>
-  <testcase name="testGetMostCommentedPostsLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.005"/>
-  <testcase name="testUserPostsLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.007"/>
+  <testcase name="testGetMostLikedUsersNoPassword()" classname="TemaTest.AppTest" time="0.007"/>
+  <testcase name="testCommentPostNoPassword()" classname="TemaTest.AppTest" time="0.006"/>
+  <testcase name="testGetMostCommentedPostsLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.006"/>
+  <testcase name="testUserPostsLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.009"/>
   <testcase name="testFollowIdWrong()" classname="TemaTest.AppTest" time="0.007"/>
-  <testcase name="testUnlikePostLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.007"/>
+  <testcase name="testUnlikePostLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.009"/>
   <testcase name="testDeletePostUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.007"/>
-  <testcase name="testLikeCommentSuccessfully()" classname="TemaTest.AppTest" time="0.009">
+  <testcase name="testLikeCommentSuccessfully()" classname="TemaTest.AppTest" time="0.013">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message':'Operation executed successfully'}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message':'Operation executed successfully'}&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
@@ -1220,11 +1220,11 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testCommentPostSuccessfully()" classname="TemaTest.AppTest" time="0.01"/>
+  <testcase name="testCommentPostSuccessfully()" classname="TemaTest.AppTest" time="0.013"/>
   <testcase name="testGetFollowersWrong()" classname="TemaTest.AppTest" time="0.007"/>
   <testcase name="testCreateUserUserCreatedSuccesfully()" classname="TemaTest.AppTest" time="0.007"/>
   <testcase name="testGetFollowersUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.005"/>
-  <testcase name="testLikeCommentAlreadyLiked()" classname="TemaTest.AppTest" time="0.008">
+  <testcase name="testLikeCommentAlreadyLiked()" classname="TemaTest.AppTest" time="0.009">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'error','message':'The comment identifier to like was not valid'}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'error','message':'The comment identifier to like was not valid'}&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
@@ -1313,9 +1313,9 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testGetFollowersSuccessfully()" classname="TemaTest.AppTest" time="0.016"/>
-  <testcase name="testUnfollowNoUsername()" classname="TemaTest.AppTest" time="0.005"/>
-  <testcase name="testPostDetailsIdNotFound()" classname="TemaTest.AppTest" time="0.005">
+  <testcase name="testGetFollowersSuccessfully()" classname="TemaTest.AppTest" time="0.022"/>
+  <testcase name="testUnfollowNoUsername()" classname="TemaTest.AppTest" time="0.006"/>
+  <testcase name="testPostDetailsIdNotFound()" classname="TemaTest.AppTest" time="0.007">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'error','message':'No post identifier was provided'}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'error','message':'No post identifier was provided'}&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
@@ -1404,13 +1404,13 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testFollowNoPassword()" classname="TemaTest.AppTest" time="0.006"/>
-  <testcase name="testCreateUserNoPassword()" classname="TemaTest.AppTest" time="0.005"/>
+  <testcase name="testFollowNoPassword()" classname="TemaTest.AppTest" time="0.007"/>
+  <testcase name="testCreateUserNoPassword()" classname="TemaTest.AppTest" time="0.006"/>
   <testcase name="testGetFollowersNoPassword()" classname="TemaTest.AppTest" time="0.005"/>
-  <testcase name="testLikeCommentNoPassword()" classname="TemaTest.AppTest" time="0.006"/>
-  <testcase name="testUnlikeCommentUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.006"/>
+  <testcase name="testLikeCommentNoPassword()" classname="TemaTest.AppTest" time="0.005"/>
+  <testcase name="testUnlikeCommentUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.007"/>
   <testcase name="testCreatePostUserNameDoesNotExist()" classname="TemaTest.AppTest" time="0.008"/>
-  <testcase name="testUserPostsNotFound()" classname="TemaTest.AppTest" time="0.006">
+  <testcase name="testUserPostsNotFound()" classname="TemaTest.AppTest" time="0.005">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'error','message':'No username to list posts was provided'}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'error','message':'No username to list posts was provided'}&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
@@ -1499,13 +1499,13 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testLikePostIdWrong()" classname="TemaTest.AppTest" time="0.012"/>
-  <testcase name="testPostDetailsNoPassword()" classname="TemaTest.AppTest" time="0.007"/>
-  <testcase name="testUnfollowNotFound()" classname="TemaTest.AppTest" time="0.009"/>
-  <testcase name="testDeletePostSuccessfully()" classname="TemaTest.AppTest" time="0.01"/>
-  <testcase name="testCreatePostNoUsername()" classname="TemaTest.AppTest" time="0.008"/>
-  <testcase name="testGetMostLikedPostsSuccessfully()" classname="TemaTest.AppTest" time="0.017">
-    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'24-02-2024','username':'test','number_of_likes':'2'},{'post_id':'2','post_text':'Am terminat temele','post_date':'24-02-2024','username':'test2','number_of_likes':'1'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'24-02-2024','username':'test3','number_of_likes':'0'} ]}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'24-02-2024','username':'test','number_of_likes':'2'},{'post_id':'2','post_text':'Am terminat temele','post_date':'24-02-2024','username':'test2','number_of_likes':'1'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'24-02-2024','username':'test3','number_of_likes':'0'} ]}&gt; but was: &lt;&gt;
+  <testcase name="testLikePostIdWrong()" classname="TemaTest.AppTest" time="0.007"/>
+  <testcase name="testPostDetailsNoPassword()" classname="TemaTest.AppTest" time="0.005"/>
+  <testcase name="testUnfollowNotFound()" classname="TemaTest.AppTest" time="0.008"/>
+  <testcase name="testDeletePostSuccessfully()" classname="TemaTest.AppTest" time="0.013"/>
+  <testcase name="testCreatePostNoUsername()" classname="TemaTest.AppTest" time="0.005"/>
+  <testcase name="testGetMostLikedPostsSuccessfully()" classname="TemaTest.AppTest" time="0.02">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'25-02-2024','username':'test','number_of_likes':'2'},{'post_id':'2','post_text':'Am terminat temele','post_date':'25-02-2024','username':'test2','number_of_likes':'1'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'25-02-2024','username':'test3','number_of_likes':'0'} ]}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'25-02-2024','username':'test','number_of_likes':'2'},{'post_id':'2','post_text':'Am terminat temele','post_date':'25-02-2024','username':'test2','number_of_likes':'1'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'25-02-2024','username':'test3','number_of_likes':'0'} ]}&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
@@ -1593,10 +1593,10 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testUnlikePostUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.006"/>
-  <testcase name="testUnlikePostNoUsername()" classname="TemaTest.AppTest" time="0.005"/>
-  <testcase name="testGetMostFollowedPostsUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.005"/>
-  <testcase name="testDeleteCommentSuccessfully()" classname="TemaTest.AppTest" time="0.01">
+  <testcase name="testUnlikePostUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.007"/>
+  <testcase name="testUnlikePostNoUsername()" classname="TemaTest.AppTest" time="0.004"/>
+  <testcase name="testGetMostFollowedPostsUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.004"/>
+  <testcase name="testDeleteCommentSuccessfully()" classname="TemaTest.AppTest" time="0.009">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message':'Operation executed successfully'}&gt; but was: &lt;{'status':'error','message':'The identifier was not valid'}&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message':'Operation executed successfully'}&gt; but was: &lt;{'status':'error','message':'The identifier was not valid'}&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
@@ -1685,7 +1685,7 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testPostDetailsUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.008"/>
+  <testcase name="testPostDetailsUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.007"/>
   <testcase name="testDeletePostLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.007"/>
   <testcase name="testLikeCommentNotFound()" classname="TemaTest.AppTest" time="0.004">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'error','message':'No comment identifier to like was provided'}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'error','message':'No comment identifier to like was provided'}&gt; but was: &lt;&gt;
@@ -1776,8 +1776,8 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testUserPostsSuccessfully()" classname="TemaTest.AppTest" time="0.023">
-    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'4','post_text':'Ma plimb in parc','post_date':'24-02-2024'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'24-02-2024'},{'post_id':'2','post_text':'Am terminat temele','post_date':'24-02-2024'},{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'24-02-2024'}]}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'4','post_text':'Ma plimb in parc','post_date':'24-02-2024'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'24-02-2024'},{'post_id':'2','post_text':'Am terminat temele','post_date':'24-02-2024'},{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'24-02-2024'}]}&gt; but was: &lt;&gt;
+  <testcase name="testUserPostsSuccessfully()" classname="TemaTest.AppTest" time="0.016">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'4','post_text':'Ma plimb in parc','post_date':'25-02-2024'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'25-02-2024'},{'post_id':'2','post_text':'Am terminat temele','post_date':'25-02-2024'},{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'25-02-2024'}]}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'4','post_text':'Ma plimb in parc','post_date':'25-02-2024'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'25-02-2024'},{'post_id':'2','post_text':'Am terminat temele','post_date':'25-02-2024'},{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'25-02-2024'}]}&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
@@ -1866,10 +1866,10 @@
 </failure>
   </testcase>
   <testcase name="testDeletePostNoUsername()" classname="TemaTest.AppTest" time="0.008"/>
-  <testcase name="testLikePostNoPassword()" classname="TemaTest.AppTest" time="0.008"/>
-  <testcase name="testLikePostUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.007"/>
-  <testcase name="testFollowingsSuccessfully()" classname="TemaTest.AppTest" time="0.019">
-    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'4','post_text':'Ma plimb in parc','post_date':'24-02-2024','username':'test4'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'24-02-2024','username':'test3'},{'post_id':'2','post_text':'Am terminat temele','post_date':'24-02-2024','username':'test2'},{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'24-02-2024','username':'test2'}]}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'4','post_text':'Ma plimb in parc','post_date':'24-02-2024','username':'test4'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'24-02-2024','username':'test3'},{'post_id':'2','post_text':'Am terminat temele','post_date':'24-02-2024','username':'test2'},{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'24-02-2024','username':'test2'}]}&gt; but was: &lt;&gt;
+  <testcase name="testLikePostNoPassword()" classname="TemaTest.AppTest" time="0.005"/>
+  <testcase name="testLikePostUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.005"/>
+  <testcase name="testFollowingsSuccessfully()" classname="TemaTest.AppTest" time="0.027">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'4','post_text':'Ma plimb in parc','post_date':'25-02-2024','username':'test4'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'25-02-2024','username':'test3'},{'post_id':'2','post_text':'Am terminat temele','post_date':'25-02-2024','username':'test2'},{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'25-02-2024','username':'test2'}]}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'4','post_text':'Ma plimb in parc','post_date':'25-02-2024','username':'test4'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'25-02-2024','username':'test3'},{'post_id':'2','post_text':'Am terminat temele','post_date':'25-02-2024','username':'test2'},{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'25-02-2024','username':'test2'}]}&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
@@ -1957,28 +1957,28 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testFollowAlreadyFollowing()" classname="TemaTest.AppTest" time="0.01"/>
+  <testcase name="testFollowAlreadyFollowing()" classname="TemaTest.AppTest" time="0.014"/>
   <testcase name="testUnfollowUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.005"/>
-  <testcase name="testDeleteCommentUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.007"/>
-  <testcase name="testUnfollowAlreadyFollowing()" classname="TemaTest.AppTest" time="0.008"/>
-  <testcase name="testCreatePostLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.006"/>
-  <testcase name="testDeleteCommentNoPermissions()" classname="TemaTest.AppTest" time="0.013"/>
-  <testcase name="testCreateUserUserAlreadyExists()" classname="TemaTest.AppTest" time="0.007"/>
-  <testcase name="testGetFollowingLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.011"/>
-  <testcase name="testUserPostsNoUsername()" classname="TemaTest.AppTest" time="0.008"/>
-  <testcase name="testGetFollowingNoUsername()" classname="TemaTest.AppTest" time="0.008"/>
-  <testcase name="testDeleteCommentNoUsername()" classname="TemaTest.AppTest" time="0.008"/>
-  <testcase name="testFollowNotFound()" classname="TemaTest.AppTest" time="0.011"/>
-  <testcase name="testGetMostLikedPostsLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.009"/>
-  <testcase name="testUnfollowNoPassword()" classname="TemaTest.AppTest" time="0.009"/>
-  <testcase name="testGetMostFollowedPostsLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.01"/>
-  <testcase name="testFollowingsNoUsername()" classname="TemaTest.AppTest" time="0.009"/>
-  <testcase name="testUnlikePostIdWrong()" classname="TemaTest.AppTest" time="0.013"/>
-  <testcase name="testUnlikeCommentNoUsername()" classname="TemaTest.AppTest" time="0.018"/>
-  <testcase name="testGetMostLikedUsersUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.01"/>
-  <testcase name="testCreatePostWithNoText()" classname="TemaTest.AppTest" time="0.016"/>
-  <testcase name="testFollowUserDoesNotExists()" classname="TemaTest.AppTest" time="0.01"/>
-  <testcase name="testGetMostLikedPostsNoUsername()" classname="TemaTest.AppTest" time="0.007"/>
+  <testcase name="testDeleteCommentUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.008"/>
+  <testcase name="testUnfollowAlreadyFollowing()" classname="TemaTest.AppTest" time="0.011"/>
+  <testcase name="testCreatePostLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.01"/>
+  <testcase name="testDeleteCommentNoPermissions()" classname="TemaTest.AppTest" time="0.014"/>
+  <testcase name="testCreateUserUserAlreadyExists()" classname="TemaTest.AppTest" time="0.008"/>
+  <testcase name="testGetFollowingLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.008"/>
+  <testcase name="testUserPostsNoUsername()" classname="TemaTest.AppTest" time="0.005"/>
+  <testcase name="testGetFollowingNoUsername()" classname="TemaTest.AppTest" time="0.005"/>
+  <testcase name="testDeleteCommentNoUsername()" classname="TemaTest.AppTest" time="0.007"/>
+  <testcase name="testFollowNotFound()" classname="TemaTest.AppTest" time="0.01"/>
+  <testcase name="testGetMostLikedPostsLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.007"/>
+  <testcase name="testUnfollowNoPassword()" classname="TemaTest.AppTest" time="0.006"/>
+  <testcase name="testGetMostFollowedPostsLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.009"/>
+  <testcase name="testFollowingsNoUsername()" classname="TemaTest.AppTest" time="0.006"/>
+  <testcase name="testUnlikePostIdWrong()" classname="TemaTest.AppTest" time="0.009"/>
+  <testcase name="testUnlikeCommentNoUsername()" classname="TemaTest.AppTest" time="0.006"/>
+  <testcase name="testGetMostLikedUsersUsernameDoesNotExists()" classname="TemaTest.AppTest" time="0.005"/>
+  <testcase name="testCreatePostWithNoText()" classname="TemaTest.AppTest" time="0.009"/>
+  <testcase name="testFollowUserDoesNotExists()" classname="TemaTest.AppTest" time="0.006"/>
+  <testcase name="testGetMostLikedPostsNoUsername()" classname="TemaTest.AppTest" time="0.005"/>
   <testcase name="testLikeCommentIdWrong()" classname="TemaTest.AppTest" time="0.005">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{'status':'error','message':'The comment identifier to like was not valid'}&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{'status':'error','message':'The comment identifier to like was not valid'}&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
@@ -2069,8 +2069,8 @@
 </failure>
   </testcase>
   <testcase name="testUnlikeCommentLoginCredentialsAreWrong()" classname="TemaTest.AppTest" time="0.011"/>
-  <testcase name="testDeleteCommentWrong()" classname="TemaTest.AppTest" time="0.009"/>
-  <testcase name="testGetMostCommentedPostsNoUsername()" classname="TemaTest.AppTest" time="0.007"/>
+  <testcase name="testDeleteCommentWrong()" classname="TemaTest.AppTest" time="0.017"/>
+  <testcase name="testGetMostCommentedPostsNoUsername()" classname="TemaTest.AppTest" time="0.009"/>
   <system-out><![CDATA[{'status':'ok','message':'Cleanup finished successfully'}
 {'status':'ok','message':'Cleanup finished successfully'}
 {'status':'ok','message':'Cleanup finished successfully'}

@@ -1,10 +1,7 @@
 package TemaTest;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Objects;
 import static TemaTest.FileHandler.*;
 
@@ -99,12 +96,7 @@ public class Post implements Likeable {
     @Override
     public void like(int id) {
         HashMap<Integer, String> lines;
-
-        try {
-            lines = handler.getLines(postsLog);
-        } catch (IOException e) {
-            return;
-        }
+        lines = handler.getLines(postsLog);
 
         for (String line : lines.values()) {
             int currentID = Integer.parseInt(line.split(",")[0]);
@@ -112,7 +104,7 @@ public class Post implements Likeable {
                 int likeNo = Integer.parseInt(line.split(",")[3]);
                 likeNo++;
 
-                changeLikeInfo(lines, line, likeNo);
+                handler.updateLikeInfo(lines, line, likeNo);
             }
         }
     }
@@ -120,12 +112,7 @@ public class Post implements Likeable {
     @Override
     public void unlike(int id) {
         HashMap<Integer, String> lines;
-
-        try {
-            lines = handler.getLines(postsLog);
-        } catch (IOException e) {
-            return;
-        }
+        lines = handler.getLines(postsLog);
 
         for (String line : lines.values()) {
             int currentID = Integer.parseInt(line.split(",")[0]);
@@ -133,21 +120,9 @@ public class Post implements Likeable {
                 int likeNo = Integer.parseInt(line.split(",")[3]);
                 likeNo--;
 
-                changeLikeInfo(lines, line, likeNo);
+                handler.updateLikeInfo(lines, line, likeNo);
                 return;
             }
-        }
-    }
-
-    private void changeLikeInfo(HashMap<Integer, String> lines, String line, int likeNo) {
-        int lineIndex = lines.values().stream().toList().indexOf(line);
-        line = line.replace(line.split(",")[3], Integer.toString(likeNo));
-        lines.replace(lineIndex, line);
-
-        try {
-            Files.write(Path.of(postsLog), lines.values());
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
         }
     }
 }

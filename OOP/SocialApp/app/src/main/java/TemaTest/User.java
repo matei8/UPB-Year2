@@ -38,9 +38,6 @@ public class User implements Likeable {
         return true;
     }
 
-    protected boolean userExists() {
-        return handler.checkUser(this.username);
-    }
 
     protected static String getUsername(String[] args) {
         String[] param = args[1].split(" ");
@@ -82,13 +79,9 @@ public class User implements Likeable {
     protected boolean unfollow(String user, String usernameToUnfollow, String log) throws IOException {
         File file = new File(log);
         boolean found = false;
-        HashMap<Integer, String> lines;
 
-        try {
-            lines = handler.getLines(log);
-        } catch (IOException e) {
-            return false;
-        }
+        HashMap<Integer, String> lines;
+        lines = handler.getLines(log);
 
         for (int i = 0; i < lines.size(); i++) {
             String currentUser = lines.get(i).split(",")[0];
@@ -141,12 +134,7 @@ public class User implements Likeable {
     private String[] getFollowsInfo(String user, File file) {
         String[] following = null;
         HashMap<Integer, String> lines;
-
-        try {
-            lines = handler.getLines(file.getPath());
-        } catch (IOException e) {
-            return null;
-        }
+        lines = handler.getLines(file.getPath());
 
         for (String line : lines.values()) {
             String currentUser = line.split(",")[0];
@@ -163,13 +151,7 @@ public class User implements Likeable {
     @Override
     public void like(int id) {
         HashMap<Integer, String> lines;
-
-        try {
-            lines = handler.getLines(usersLog);
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-            return;
-        }
+        lines = handler.getLines(usersLog);
 
         for (String line : lines.values()) {
             String currentUser = line.split(",")[0];
@@ -192,13 +174,7 @@ public class User implements Likeable {
     @Override
     public void unlike(int id) {
         HashMap<Integer, String> lines;
-
-        try {
-            lines = handler.getLines(usersLog);
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-            return;
-        }
+        lines = handler.getLines(usersLog);
 
         for (String line : lines.values()) {
             String currentUser = line.split(",")[0];
