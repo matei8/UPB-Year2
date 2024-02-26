@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.TestMain" tests="12" skipped="0" failures="0" errors="0" timestamp="2024-02-26T18:25:38" hostname="JARVIS" time="0.299">
+  <properties/>
+  <testcase name="coliziuniCicluStudiiContestatii10()" classname="org.example.TestMain" time="0.094"/>
+  <testcase name="coliziuniMedie08()" classname="org.example.TestMain" time="0.026"/>
+  <testcase name="toateFunctionalitatile12()" classname="org.example.TestMain" time="0.046"/>
+  <testcase name="inroleazaSimplu05()" classname="org.example.TestMain" time="0.011"/>
+  <testcase name="posteazaMedii01()" classname="org.example.TestMain" time="0.008"/>
+  <testcase name="posteazaMediiContestatii02()" classname="org.example.TestMain" time="0.01"/>
+  <testcase name="posteazaMediiContestatii03()" classname="org.example.TestMain" time="0.012"/>
+  <testcase name="posteazaMediiContestatii04()" classname="org.example.TestMain" time="0.008"/>
+  <testcase name="inroleazaCicluStudiiContestatii07()" classname="org.example.TestMain" time="0.026"/>
+  <testcase name="inroleazaCicluStudii06()" classname="org.example.TestMain" time="0.014"/>
+  <testcase name="coliziuniCicluStudii09()" classname="org.example.TestMain" time="0.017"/>
+  <testcase name="exceptieSimplu11()" classname="org.example.TestMain" time="0.01"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
