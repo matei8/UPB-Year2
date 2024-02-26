@@ -14,6 +14,17 @@ public class Validator {
         return instance;
     }
 
+    public boolean validLogin(String[] args) {
+        if (args.length < 2 || !args[1].contains("-u")) {
+            System.out.println("{'status':'error','message':'You need to be authenticated'}");
+            return false;
+        } else if (args.length < 3 || !args[2].contains("-p")) {
+            System.out.println("{'status':'error','message':'You need to be authenticated'}");
+            return false;
+        }
+        return true;
+    }
+
     public boolean postExists(int id) {
         HashMap<Integer, String> lines;
         lines = handler.getLines(appFiles.get(1));
@@ -109,5 +120,26 @@ public class Validator {
 
     public boolean postValidForUnlike(User user, int id) {
         return postAlreadyLiked(user, id) && postBelongsToUser(user, id);
+    }
+
+    private boolean commentBelongsToUser(String username, int id) {
+        HashMap<Integer, String> lines;
+        lines = handler.getLines(appFiles.get(5));
+
+        for (String line : lines.values()) {
+            int currentID = Integer.parseInt(line.split(",")[0]);
+            if (currentID == id) {
+                String currentUser = line.split(",")[2];
+                if (currentUser.equals(username)) {
+                    return false;
+                }
+                break;
+            }
+        }
+        return true;
+    }
+
+    public boolean commentValidForDelete(String username, int id) {
+        return commentBelongsToUser(username, id);
     }
 }

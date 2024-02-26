@@ -22,6 +22,5 @@ public interface Handler {
     void updateAppStats(String type, int value, boolean increment) throws IOException;
     String readKthLine(String filePath, int k);
     int getLineNo(String filePath);
-    void updateLikeInfo(HashMap<Integer, String> lines, String line, int likeNo);
     void cleanAll();
 }

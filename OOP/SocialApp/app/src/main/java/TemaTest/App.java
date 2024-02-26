@@ -7,22 +7,15 @@ import java.io.IOException;
 import java.lang.*;
 
 public class App {
+    private static final App instance = new App();
     private static final FileHandler handler = new FileHandler();
     private static final Validator validator = Validator.getInstance();
-    public App() {
 
+    private App() {
     }
 
-    // Check if the username and password arguments are provided
-    private static boolean checkParams(String[] args) {
-        if (args.length < 2 || !args[1].contains("-u")) {
-            System.out.println("{'status':'error','message':'You need to be authenticated'}");
-            return false;
-        } else if (args.length < 3 || !args[2].contains("-p")) {
-            System.out.println("{'status':'error','message':'You need to be authenticated'}");
-            return false;
-        }
-        return true;
+    public static App getInstance() {
+        return instance;
     }
 
     private void cleanup() {
@@ -98,7 +91,7 @@ public class App {
           Logic of the following part:
 
                 (follows)
-          User1 --------> User2   (1)
+          User1 --------> User2  (1)
                 (is followed by)
           User2 <--------------- User1 (2)
 
@@ -176,6 +169,7 @@ public class App {
     private void likePost(String[] args) {
         Post post = new Post(args);
         int id;
+
         try {
             id = post.getId(args);
         } catch (ArrayIndexOutOfBoundsException e) {
@@ -217,6 +211,7 @@ public class App {
 
     private void commentPost(String[] args) {
         Comment com = new Comment(args);
+
         try {
             com.text = com.getText(args);
             com.postID = com.getPostID(args);
@@ -243,8 +238,13 @@ public class App {
 
         Comment comment = new Comment(args);
 
+        if (validator.commentValidForDelete(comment.username, comment.id)) {
+            System.out.println("{'status':'error','message':'The identifier was not valid'}");
+            return;
+        }
+
         if (comment.delete()) {
-            System.out.println("{'status':'ok','message':'Comment deleted successfully'}");
+            System.out.println("{'status':'ok','message':'Operation executed successfully'}");
         }
     }
 
@@ -255,7 +255,7 @@ public class App {
         }
 
         if (!strings[0].equals("-cleanup-all") && !strings[0].equals("-create-user")) {
-            if (!checkParams(strings)) {
+            if (!validator.validLogin(strings)) {
                 return;
             }
 
@@ -268,7 +268,7 @@ public class App {
             }
         }
 
-        App app = new App();
+        App app = App.getInstance();
 
         switch (strings[0]) {
             case "-cleanup-all": app.cleanup(); break;

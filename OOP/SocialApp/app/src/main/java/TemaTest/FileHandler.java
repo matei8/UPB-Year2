@@ -171,30 +171,18 @@ public class FileHandler implements Handler {
         lines = getLines(file);
         return lines.size();
     }
-    public void updateLikeInfo(HashMap<Integer, String> lines, String line, int likeNo) {
-        int lineIndex = lines.values().stream().toList().indexOf(line);
-        line = line.replace(line.split(",")[3], Integer.toString(likeNo));
-        lines.replace(lineIndex, line);
 
-        try {
-            Files.write(Path.of(postsLog), lines.values());
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-
-    public boolean deletePostOrComm(int id, String commentsLog, HashMap<Integer, String> lines) {
-        File comments = new File(commentsLog);
+    public boolean deletePostOrComm(int id, String logFileName) {
+        HashMap<Integer, String> lines = getLines(logFileName);
+        File logFile = new File(logFileName);
 
         for (int i = 0; i < lines.size(); i++) {
             String line = lines.get(i);
             int currentID = Integer.parseInt(line.split(",")[0]);
             if (currentID == id) {
                 lines.remove(i);
-
                 try {
-                    Files.write(comments.toPath(), lines.values());
+                    Files.write(logFile.toPath(), lines.values());
                 } catch (IOException e) {
                     System.out.println(e.getMessage());
                     return false;

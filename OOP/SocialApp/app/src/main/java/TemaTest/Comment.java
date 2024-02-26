@@ -1,6 +1,9 @@
 package TemaTest;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.HashMap;
 import java.util.Objects;
 
 import static TemaTest.FileHandler.*;
@@ -15,7 +18,7 @@ public class Comment implements Likeable {
 
     public Comment(String[] args) {
         this.username = getUsername(args);
-        if (!args[0].equals("-delete-comment-by-id") && args.length == 4) {
+        if (!args[0].equals("-delete-comment-by-id") && args.length == 5) {
             this.id = getLastID() + 1;
         } else if (args[0].equals("-delete-comment-by-id") && args.length == 4) {
             this.id = getId(args);
@@ -76,7 +79,9 @@ public class Comment implements Likeable {
     }
 
     protected boolean delete() {
-        if (getLastID() == 0 || this.id > getLastID()) {
+        int lastID = getLastID();
+
+        if (lastID == 0 || this.id > lastID) {
             System.out.println("{'status':'error','message':'The identifier was not valid'}");
             return false;
         }
@@ -87,23 +92,59 @@ public class Comment implements Likeable {
             }
             return true;
         } catch (IOException e) {
-            System.out.println("Warning: Did not got deleted from App Stats file!");
+            System.out.println("Warning: Was not deleted from App Stats file!");
         }
-
 
         return false;
     }
 
     private boolean deleteCommFromLog(int id) throws IOException {
-        return handler.deletePostOrComm(id, commentsLog, handler.getLines(commentsLog));
+        return handler.deletePostOrComm(id, commentsLog);
     }
 
     @Override
     public void like(int id) {
+        HashMap<Integer, String> lines;
+        lines = handler.getLines(commentsLog);
+
+        for (String line : lines.values()) {
+            int currentID = Integer.parseInt(line.split(",")[0]);
+            if (currentID == id) {
+                int likeNo = Integer.parseInt(line.split(",")[4]);
+                likeNo++;
+
+                updateLikeInfo(lines, line, likeNo);
+            }
+        }
     }
 
     @Override
     public void unlike(int id) {
+        HashMap<Integer, String> lines;
+        lines = handler.getLines(commentsLog);
 
+        for (String line : lines.values()) {
+            int currentID = Integer.parseInt(line.split(",")[0]);
+            if (currentID == id) {
+                int likeNo = Integer.parseInt(line.split(",")[4]);
+                likeNo--;
+
+                updateLikeInfo(lines, line, likeNo);
+                return;
+            }
+        }
+    }
+
+    @Override
+    public void updateLikeInfo(HashMap<Integer, String> lines, String line, int likeNo) {
+        int lineIndex = lines.values().stream().toList().indexOf(line);
+        line = line.replace(line.split(",")[4], Integer.toString(likeNo));
+        lines.replace(lineIndex, line);
+
+        try {
+            Files.write(Path.of(commentsLog), lines.values());
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

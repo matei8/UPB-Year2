@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">22</div>
+<div class="counter">21</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.193s</div>
+<div class="counter">1.313s</div>
 <p>duration</p>
 </div>
 </td>
@@ -51,7 +51,7 @@
 </td>
 <td>
 <div class="infoBox failures" id="successRate">
-<div class="percent">83%</div>
+<div class="percent">84%</div>
 <p>successful</p>
 </div>
 </td>
@@ -73,103 +73,10 @@
 <div id="tab0" class="tab">
 <h2>Failed tests</h2>
 <div class="test">
-<a name="testDeleteCommentSuccessfully()"></a>
-<h3 class="failures">testDeleteCommentSuccessfully()</h3>
-<span class="code">
-<pre>org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message':'Operation executed successfully'}&gt; but was: &lt;{'status':'error','message':'The identifier was not valid'}&gt;
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1141)
-	at TemaTest.AppTest.testDeleteCommentSuccessfully(AppTest.java:3225)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-</pre>
-</span>
-</div>
-<div class="test">
 <a name="testFollowingsSuccessfully()"></a>
 <h3 class="failures">testFollowingsSuccessfully()</h3>
 <span class="code">
-<pre>org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'4','post_text':'Ma plimb in parc','post_date':'25-02-2024','username':'test4'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'25-02-2024','username':'test3'},{'post_id':'2','post_text':'Am terminat temele','post_date':'25-02-2024','username':'test2'},{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'25-02-2024','username':'test2'}]}&gt; but was: &lt;&gt;
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'4','post_text':'Ma plimb in parc','post_date':'26-02-2024','username':'test4'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'26-02-2024','username':'test3'},{'post_id':'2','post_text':'Am terminat temele','post_date':'26-02-2024','username':'test2'},{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'26-02-2024','username':'test2'}]}&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
@@ -262,7 +169,7 @@
 <a name="testGetMostCommentedPostsSuccessfully()"></a>
 <h3 class="failures">testGetMostCommentedPostsSuccessfully()</h3>
 <span class="code">
-<pre>org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'25-02-2024','username':'test','number_of_comments':'2'},{'post_id':'2','post_text':'Am terminat temele','post_date':'25-02-2024','username':'test2','number_of_comments':'1'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'25-02-2024','username':'test3','number_of_comments':'0'}]}&gt; but was: &lt;&gt;
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'26-02-2024','username':'test','number_of_comments':'2'},{'post_id':'2','post_text':'Am terminat temele','post_date':'26-02-2024','username':'test2','number_of_comments':'1'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'26-02-2024','username':'test3','number_of_comments':'0'}]}&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
@@ -448,7 +355,7 @@
 <a name="testGetMostLikedPostsSuccessfully()"></a>
 <h3 class="failures">testGetMostLikedPostsSuccessfully()</h3>
 <span class="code">
-<pre>org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'25-02-2024','username':'test','number_of_likes':'2'},{'post_id':'2','post_text':'Am terminat temele','post_date':'25-02-2024','username':'test2','number_of_likes':'1'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'25-02-2024','username':'test3','number_of_likes':'0'} ]}&gt; but was: &lt;&gt;
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'26-02-2024','username':'test','number_of_likes':'2'},{'post_id':'2','post_text':'Am terminat temele','post_date':'26-02-2024','username':'test2','number_of_likes':'1'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'26-02-2024','username':'test3','number_of_likes':'0'} ]}&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
@@ -1285,7 +1192,7 @@
 <a name="testPostDetailsSuccessfully()"></a>
 <h3 class="failures">testPostDetailsSuccessfully()</h3>
 <span class="code">
-<pre>org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_text':'Am terminat temele','post_date':'25-02-2024','username':'test','number_of_likes':'0','comments': [{'comment_id':'1','comment_text':'Felicitari','comment_date':'25-02-2024','username':'test2','number_of_likes':'0'}] }] }&gt; but was: &lt;&gt;
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_text':'Am terminat temele','post_date':'26-02-2024','username':'test','number_of_likes':'0','comments': [{'comment_id':'1','comment_text':'Felicitari','comment_date':'26-02-2024','username':'test2','number_of_likes':'0'}] }] }&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
@@ -2029,7 +1936,7 @@
 <a name="testUserPostsSuccessfully()"></a>
 <h3 class="failures">testUserPostsSuccessfully()</h3>
 <span class="code">
-<pre>org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'4','post_text':'Ma plimb in parc','post_date':'25-02-2024'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'25-02-2024'},{'post_id':'2','post_text':'Am terminat temele','post_date':'25-02-2024'},{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'25-02-2024'}]}&gt; but was: &lt;&gt;
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;{'status':'ok','message': [{'post_id':'4','post_text':'Ma plimb in parc','post_date':'26-02-2024'},{'post_id':'3','post_text':'Merg la pescuit','post_date':'26-02-2024'},{'post_id':'2','post_text':'Am terminat temele','post_date':'26-02-2024'},{'post_id':'1','post_text':'Astazi ma simt bine','post_date':'26-02-2024'}]}&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
@@ -2131,22 +2038,22 @@
 </thead>
 <tr>
 <td class="success">testCommentPostLoginCredentialsAreWrong()</td>
-<td class="success">0.004s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testCommentPostNoPassword()</td>
-<td class="success">0.006s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testCommentPostNoUsername()</td>
-<td class="success">0.006s</td>
+<td class="success">0.012s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testCommentPostSuccessfully()</td>
-<td class="success">0.013s</td>
+<td class="success">0.018s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2156,47 +2063,47 @@
 </tr>
 <tr>
 <td class="success">testCommentPostWithNoText()</td>
-<td class="success">0.005s</td>
+<td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testCommentPostWithOver300Characters()</td>
-<td class="success">0.055s</td>
+<td class="success">0.048s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testCreatePostLoginCredentialsAreWrong()</td>
-<td class="success">0.010s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testCreatePostNoPassword()</td>
-<td class="success">0.008s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testCreatePostNoUsername()</td>
-<td class="success">0.005s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testCreatePostSuccessfully()</td>
-<td class="success">0.008s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testCreatePostUserNameDoesNotExist()</td>
-<td class="success">0.008s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testCreatePostWithNoText()</td>
 <td class="success">0.009s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
+<td class="success">testCreatePostNoPassword()</td>
+<td class="success">0.009s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testCreatePostNoUsername()</td>
+<td class="success">0.019s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testCreatePostSuccessfully()</td>
+<td class="success">0.010s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testCreatePostUserNameDoesNotExist()</td>
+<td class="success">0.007s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testCreatePostWithNoText()</td>
+<td class="success">0.014s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">testCreatePostWithOver300Characters()</td>
-<td class="success">0.008s</td>
+<td class="success">0.009s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2206,12 +2113,12 @@
 </tr>
 <tr>
 <td class="success">testCreateUserNoUsername()</td>
-<td class="success">0.005s</td>
+<td class="success">0.007s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testCreateUserUserAlreadyExists()</td>
-<td class="success">0.008s</td>
+<td class="success">0.009s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2221,7 +2128,7 @@
 </tr>
 <tr>
 <td class="success">testDeleteCommentLoginCredentialsAreWrong()</td>
-<td class="success">0.009s</td>
+<td class="success">0.011s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2231,37 +2138,37 @@
 </tr>
 <tr>
 <td class="success">testDeleteCommentNoPermissions()</td>
-<td class="success">0.014s</td>
+<td class="success">0.013s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testDeleteCommentNoUsername()</td>
-<td class="success">0.007s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testDeleteCommentNotFound()</td>
-<td class="success">0.006s</td>
+<td class="success">0.007s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">testDeleteCommentSuccessfully()</td>
-<td class="failures">0.009s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
-<td class="success">testDeleteCommentUsernameDoesNotExists()</td>
-<td class="success">0.008s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testDeleteCommentWrong()</td>
+<td class="success">testDeleteCommentSuccessfully()</td>
 <td class="success">0.017s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
+<td class="success">testDeleteCommentUsernameDoesNotExists()</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testDeleteCommentWrong()</td>
+<td class="success">0.008s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">testDeletePostLoginCredentialsAreWrong()</td>
-<td class="success">0.007s</td>
+<td class="success">0.009s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2271,22 +2178,22 @@
 </tr>
 <tr>
 <td class="success">testDeletePostNoUsername()</td>
-<td class="success">0.008s</td>
+<td class="success">0.007s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testDeletePostNotValid()</td>
-<td class="success">0.011s</td>
+<td class="success">0.018s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testDeletePostSuccessfully()</td>
-<td class="success">0.013s</td>
+<td class="success">0.011s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testDeletePostUsernameDoesNotExists()</td>
-<td class="success">0.007s</td>
+<td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2296,72 +2203,72 @@
 </tr>
 <tr>
 <td class="success">testFollowAlreadyFollowing()</td>
-<td class="success">0.014s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testFollowIdWrong()</td>
-<td class="success">0.007s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testFollowNoPassword()</td>
-<td class="success">0.007s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testFollowNoUsername()</td>
-<td class="success">0.004s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testFollowNotFound()</td>
 <td class="success">0.010s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
+<td class="success">testFollowIdWrong()</td>
+<td class="success">0.009s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testFollowNoPassword()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testFollowNoUsername()</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testFollowNotFound()</td>
+<td class="success">0.018s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">testFollowSuccessfully()</td>
-<td class="success">0.017s</td>
+<td class="success">0.012s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testFollowUserDoesNotExists()</td>
-<td class="success">0.006s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testFollowWrongCredentials()</td>
-<td class="success">0.006s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testFollowingsLoginCredentialsAreWrong()</td>
-<td class="success">0.006s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testFollowingsNoPassword()</td>
 <td class="success">0.008s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testFollowingsNoUsername()</td>
+<td class="success">testFollowWrongCredentials()</td>
+<td class="success">0.007s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testFollowingsLoginCredentialsAreWrong()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testFollowingsNoPassword()</td>
 <td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
+<td class="success">testFollowingsNoUsername()</td>
+<td class="success">0.008s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="failures">testFollowingsSuccessfully()</td>
-<td class="failures">0.027s</td>
+<td class="failures">0.022s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">testFollowingsUsernameDoesNotExists()</td>
-<td class="success">0.004s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testGetFollowersLoginCredentialsAreWrong()</td>
-<td class="success">0.005s</td>
+<td class="success">0.007s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2371,7 +2278,7 @@
 </tr>
 <tr>
 <td class="success">testGetFollowersNoUsername()</td>
-<td class="success">0.006s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2381,12 +2288,12 @@
 </tr>
 <tr>
 <td class="success">testGetFollowersSuccessfully()</td>
-<td class="success">0.022s</td>
+<td class="success">0.020s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testGetFollowersUsernameDoesNotExists()</td>
-<td class="success">0.005s</td>
+<td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2396,7 +2303,7 @@
 </tr>
 <tr>
 <td class="success">testGetFollowingLoginCredentialsAreWrong()</td>
-<td class="success">0.008s</td>
+<td class="success">0.009s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2411,17 +2318,17 @@
 </tr>
 <tr>
 <td class="success">testGetFollowingSuccessfully()</td>
-<td class="success">0.015s</td>
+<td class="success">0.028s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testGetFollowingUsernameDoesNotExists()</td>
-<td class="success">0.007s</td>
+<td class="success">0.011s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testGetMostCommentedPostsLoginCredentialsAreWrong()</td>
-<td class="success">0.006s</td>
+<td class="success">0.008s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2431,52 +2338,52 @@
 </tr>
 <tr>
 <td class="success">testGetMostCommentedPostsNoUsername()</td>
-<td class="success">0.009s</td>
+<td class="success">0.007s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="failures">testGetMostCommentedPostsSuccessfully()</td>
-<td class="failures">0.020s</td>
+<td class="failures">0.016s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">testGetMostCommentedPostsUsernameDoesNotExists()</td>
-<td class="success">0.005s</td>
+<td class="success">0.007s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testGetMostFollowedPostsLoginCredentialsAreWrong()</td>
-<td class="success">0.009s</td>
+<td class="success">0.010s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testGetMostFollowedPostsNoPassword()</td>
-<td class="success">0.006s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testGetMostFollowedPostsNoUsername()</td>
-<td class="success">0.009s</td>
+<td class="success">0.008s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="failures">testGetMostFollowedPostsSuccessfully()</td>
-<td class="failures">0.039s</td>
+<td class="failures">0.031s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">testGetMostFollowedPostsUsernameDoesNotExists()</td>
-<td class="success">0.004s</td>
+<td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testGetMostLikedPostsLoginCredentialsAreWrong()</td>
-<td class="success">0.007s</td>
+<td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testGetMostLikedPostsNoPassword()</td>
-<td class="success">0.007s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2486,12 +2393,12 @@
 </tr>
 <tr>
 <td class="failures">testGetMostLikedPostsSuccessfully()</td>
-<td class="failures">0.020s</td>
+<td class="failures">0.023s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">testGetMostLikedPostsUsernameDoesNotExists()</td>
-<td class="success">0.007s</td>
+<td class="success">0.008s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2501,77 +2408,77 @@
 </tr>
 <tr>
 <td class="success">testGetMostLikedUsersNoPassword()</td>
-<td class="success">0.007s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testGetMostLikedUsersNoUsername()</td>
 <td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
+<td class="success">testGetMostLikedUsersNoUsername()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="failures">testGetMostLikedUsersSuccessfully()</td>
-<td class="failures">0.039s</td>
+<td class="failures">0.038s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">testGetMostLikedUsersUsernameDoesNotExists()</td>
-<td class="success">0.005s</td>
+<td class="success">0.013s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="failures">testLikeCommentAlreadyLiked()</td>
-<td class="failures">0.009s</td>
+<td class="failures">0.011s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">testLikeCommentIdWrong()</td>
-<td class="failures">0.005s</td>
+<td class="failures">0.007s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">testLikeCommentLoginCredentialsAreWrong()</td>
-<td class="success">0.009s</td>
+<td class="success">0.008s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testLikeCommentNoPassword()</td>
-<td class="success">0.005s</td>
+<td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testLikeCommentNoUsername()</td>
-<td class="success">0.009s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="failures">testLikeCommentNotFound()</td>
-<td class="failures">0.004s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
-<td class="failures">testLikeCommentSuccessfully()</td>
-<td class="failures">0.013s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
-<td class="success">testLikeCommentUsernameDoesNotExists()</td>
-<td class="success">0.008s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testLikePostAlreadyLiked()</td>
-<td class="success">0.014s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testLikePostIdWrong()</td>
 <td class="success">0.007s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
+<td class="failures">testLikeCommentNotFound()</td>
+<td class="failures">0.006s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">testLikeCommentSuccessfully()</td>
+<td class="failures">0.010s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="success">testLikeCommentUsernameDoesNotExists()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testLikePostAlreadyLiked()</td>
+<td class="success">0.030s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testLikePostIdWrong()</td>
+<td class="success">0.010s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">testLikePostLoginCredentialsAreWrong()</td>
-<td class="success">0.008s</td>
+<td class="success">0.009s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2586,22 +2493,22 @@
 </tr>
 <tr>
 <td class="success">testLikePostNotFound()</td>
-<td class="success">0.012s</td>
+<td class="success">0.013s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testLikePostSuccessfully()</td>
-<td class="success">0.019s</td>
+<td class="success">0.016s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testLikePostUsernameDoesNotExists()</td>
-<td class="success">0.005s</td>
+<td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="failures">testPostDetailsIdNotFound()</td>
-<td class="failures">0.007s</td>
+<td class="failures">0.006s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
@@ -2611,32 +2518,32 @@
 </tr>
 <tr>
 <td class="failures">testPostDetailsIdWrongSecond()</td>
-<td class="failures">0.008s</td>
+<td class="failures">0.005s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">testPostDetailsLoginCredentialsAreWrong()</td>
-<td class="success">0.007s</td>
+<td class="success">0.009s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testPostDetailsNoPassword()</td>
-<td class="success">0.005s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPostDetailsNoUsername()</td>
 <td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
+<td class="success">testPostDetailsNoUsername()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="failures">testPostDetailsSuccessfully()</td>
-<td class="failures">0.011s</td>
+<td class="failures">0.010s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">testPostDetailsUsernameDoesNotExists()</td>
-<td class="success">0.007s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2646,27 +2553,27 @@
 </tr>
 <tr>
 <td class="success">testUnfollowIdWrong()</td>
-<td class="success">0.007s</td>
+<td class="success">0.011s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testUnfollowLoginCredentialsAreWrong()</td>
-<td class="success">0.006s</td>
+<td class="success">0.018s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testUnfollowNoPassword()</td>
-<td class="success">0.006s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testUnfollowNoUsername()</td>
-<td class="success">0.006s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testUnfollowNotFound()</td>
-<td class="success">0.008s</td>
+<td class="success">0.009s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2676,22 +2583,22 @@
 </tr>
 <tr>
 <td class="success">testUnfollowUsernameDoesNotExists()</td>
-<td class="success">0.005s</td>
+<td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="failures">testUnlikeCommentAlreadyLiked()</td>
-<td class="failures">0.011s</td>
+<td class="failures">0.023s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">testUnlikeCommentIdWrong()</td>
-<td class="failures">0.004s</td>
+<td class="failures">0.005s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">testUnlikeCommentLoginCredentialsAreWrong()</td>
-<td class="success">0.011s</td>
+<td class="success">0.012s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2701,32 +2608,32 @@
 </tr>
 <tr>
 <td class="success">testUnlikeCommentNoUsername()</td>
-<td class="success">0.006s</td>
+<td class="success">0.009s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="failures">testUnlikeCommentNotFound()</td>
-<td class="failures">0.006s</td>
+<td class="failures">0.005s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">testUnlikeCommentSuccessfully()</td>
-<td class="failures">0.019s</td>
+<td class="failures">0.027s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">testUnlikeCommentUsernameDoesNotExists()</td>
-<td class="success">0.007s</td>
+<td class="success">0.008s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testUnlikePostAlreadyLiked()</td>
-<td class="success">0.012s</td>
+<td class="success">0.010s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testUnlikePostIdWrong()</td>
-<td class="success">0.009s</td>
+<td class="success">0.011s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2736,22 +2643,22 @@
 </tr>
 <tr>
 <td class="success">testUnlikePostNoPassword()</td>
-<td class="success">0.007s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testUnlikePostNoUsername()</td>
-<td class="success">0.004s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testUnlikePostNotFound()</td>
 <td class="success">0.008s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
+<td class="success">testUnlikePostNoUsername()</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testUnlikePostNotFound()</td>
+<td class="success">0.007s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">testUnlikePostSuccessfully()</td>
-<td class="success">0.012s</td>
+<td class="success">0.014s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2761,27 +2668,27 @@
 </tr>
 <tr>
 <td class="failures">testUserPostsAlreadyUnfollowing()</td>
-<td class="failures">0.007s</td>
+<td class="failures">0.022s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">testUserPostsIdWrong()</td>
-<td class="failures">0.007s</td>
+<td class="failures">0.005s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">testUserPostsLoginCredentialsAreWrong()</td>
-<td class="success">0.009s</td>
+<td class="success">0.008s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testUserPostsNoPassword()</td>
-<td class="success">0.005s</td>
+<td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testUserPostsNoUsername()</td>
-<td class="success">0.005s</td>
+<td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2791,7 +2698,7 @@
 </tr>
 <tr>
 <td class="failures">testUserPostsSuccessfully()</td>
-<td class="failures">0.016s</td>
+<td class="failures">0.021s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
@@ -2818,7 +2725,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.4</a> at Feb 25, 2024, 11:45:38 PM</p>
+<a href="http://www.gradle.org">Gradle 7.4</a> at Feb 26, 2024, 1:00:05 PM</p>
 </div>
 </div>
 </body>

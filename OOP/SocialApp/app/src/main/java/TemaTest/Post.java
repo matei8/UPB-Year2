@@ -1,6 +1,8 @@
 package TemaTest;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Objects;
 import static TemaTest.FileHandler.*;
@@ -38,7 +40,9 @@ public class Post implements Likeable {
     }
 
     protected boolean delete() {
-        if (getLastID() == 0 || this.id > getLastID()) {
+        int lastID = getLastID();
+
+        if (lastID == 0 || this.id > lastID) {
             System.out.println("{'status':'error','message':'The identifier was not valid'}");
             return false;
         }
@@ -49,14 +53,14 @@ public class Post implements Likeable {
             }
             return true;
         } catch (IOException e) {
-            System.out.println("Warning: Did not got deleted from App Stats file!");
+            System.out.println("Warning: Was not deleted from App Stats file!");
         }
 
         return false;
     }
 
     private boolean deletePostFromLog(int id) throws IOException {
-        return handler.deletePostOrComm(id, postsLog, handler.getLines(postsLog));
+        return handler.deletePostOrComm(id, postsLog);
     }
 
     protected boolean logPost() {
@@ -104,7 +108,7 @@ public class Post implements Likeable {
                 int likeNo = Integer.parseInt(line.split(",")[3]);
                 likeNo++;
 
-                handler.updateLikeInfo(lines, line, likeNo);
+                updateLikeInfo(lines, line, likeNo);
             }
         }
     }
@@ -120,9 +124,22 @@ public class Post implements Likeable {
                 int likeNo = Integer.parseInt(line.split(",")[3]);
                 likeNo--;
 
-                handler.updateLikeInfo(lines, line, likeNo);
+                updateLikeInfo(lines, line, likeNo);
                 return;
             }
+        }
+    }
+
+    @Override
+    public void updateLikeInfo(HashMap<Integer, String> lines, String line, int likeNo) {
+        int lineIndex = lines.values().stream().toList().indexOf(line);
+        line = line.replace(line.split(",")[3], Integer.toString(likeNo));
+        lines.replace(lineIndex, line);
+
+        try {
+            Files.write(Path.of(postsLog), lines.values());
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
     }
 }
