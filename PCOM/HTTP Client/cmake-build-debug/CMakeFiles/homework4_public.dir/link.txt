@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2023.3.4\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\homework4_public.dir/objects.a
+C:\MinGW\bin\ar.exe qc CMakeFiles\homework4_public.dir/objects.a @CMakeFiles\homework4_public.dir\objects1.rsp
+C:\MinGW\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\homework4_public.dir/objects.a -Wl,--no-whole-archive -o homework4_public.exe -Wl,--out-implib,libhomework4_public.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\homework4_public.dir\linkLibs.rsp
