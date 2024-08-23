@@ -15,13 +15,11 @@ public class Student {
         this.medie = medie;
     }
 
-    public static Comparator<Student> StuNameComparator = new Comparator<>() {
-        public int compare(Student s1, Student s2) {
-            String studNume1 = s1.getNume().toUpperCase();
-            String studNume2 = s2.getNume().toUpperCase();
+    public static Comparator<Student> StuNameComparator = (s1, s2) -> {
+        String studNume1 = s1.getNume().toUpperCase();
+        String studNume2 = s2.getNume().toUpperCase();
 
-            return studNume1.compareTo(studNume2);
-        }
+        return studNume1.compareTo(studNume2);
     };
 
     public String getNume() {
